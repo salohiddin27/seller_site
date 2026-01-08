@@ -49,4 +49,4 @@ The frontend can be easily replaced in the future with modern frameworks such as
 ✔ Backend-focused Django project
 ✔ API and business logic at the core
 ✔ Frontend used for demonstration and testing
-✔ Open to future improvements and extensions
+✔ Open to future improvements and extensions.
