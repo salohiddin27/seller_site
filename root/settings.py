@@ -1,14 +1,15 @@
+import os
 from pathlib import Path
 
-from .config import (SECRET_KEY, DEBUG, ALLOWED_HOSTS, CSRF_TRUSTED_ORIGINS)
+from dotenv import load_dotenv
 
-SECRET_KEY = SECRET_KEY
+load_dotenv()
+SECRET_KEY = os.getenv('SECRET_KEY')
 
-DEBUG = DEBUG
+DEBUG = os.getenv('DEBUG')
 
-ALLOWED_HOSTS = ALLOWED_HOSTS
-INTERNAL_IPS = ALLOWED_HOSTS
-CSRF_TRUSTED_ORIGINS = CSRF_TRUSTED_ORIGINS
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', "").split(",")
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 INSTALLED_APPS = [
@@ -22,11 +23,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'rest_framework.authtoken',
-]
+    'django_filters',
+    'django.contrib.humanize',
 
-CSRF_TRUSTED_ORIGINS = [
-    "https://salohiddin-nurbayev.jprq.live",
-    "http://localhost:3000",
 ]
 
 MIDDLEWARE = [
@@ -69,10 +68,6 @@ REST_FRAMEWORK = {
     ]
 }
 
-
-
-
-
 WSGI_APPLICATION = 'root.wsgi.application'
 
 DATABASES = {
@@ -105,12 +100,6 @@ USE_I18N = True
 
 USE_TZ = True
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.2/howto/static-files/
-
 STATIC_URL = 'static/'
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
