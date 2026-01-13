@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Categories</title>
+    <title>Category</title>
     <style>
         body { font-family: Arial; background: #f4f6f8; margin: 0; }
         .search-box { text-align: center; margin: 30px 0; }
@@ -65,7 +65,7 @@
 
 <!-- CATEGORIES -->
 <div class="container">
-    {% for category in categories %}
+    {% for category in category %}
         <a href="{% url 'category_products' category.id %}">
             <div class="category-card">
                 <img src="{{ category.photo.url }}" alt="{{ category.name }}">
@@ -73,7 +73,7 @@
             </div>
         </a>
     {% empty %}
-        <p style="text-align:center;">No categories found.</p>
+        <p style="text-align:center;">No category found.</p>
     {% endfor %}
 </div>
 
