@@ -19,6 +19,7 @@ icecream==2.1.8
 idna==3.11
 packaging==26.0
 pillow==12.0.0
+psycopg2-binary==2.9.11
 Pygments==2.19.2
 python-decouple==3.8
 python-dotenv==1.2.1
@@ -29,3 +30,8 @@ types-requests==2.32.4.20260107
 typing_extensions==4.15.0
 urllib3==2.6.2
 whitenoise==6.12.0
+dj-database-url
+
+psycopg2-binary
+
+whitenoise
