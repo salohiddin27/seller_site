@@ -1,1 +1,1 @@
-web: python manage.py migrate --noinput && python manage.py collectstatic --noinput && gunicorn root.wsgi
+web: python manage.py migrate --noinput && python manage.py createsuperuser --username admin_final --email admin@test.com --noinput || true && python manage.py collectstatic --noinput && gunicorn root.wsgi
